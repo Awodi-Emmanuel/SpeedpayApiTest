@@ -1,9 +1,12 @@
 # SpeedpayApiTest
-A FintechAPIs test with (User authentication  --register --login)
-- Deposit and withdrawal endpoint
-- check balance endpoint
-Speedpay Api Test
-----------------
+A FintechAPIs test with 
+
+Logic Implementation
+1. User authentication  (registeration and login)
+2. create a new user via Api
+3. make deposit via api
+4. make a withdrawal via api
+5. Check Balance
 
 Step by step guid to building the api
 
