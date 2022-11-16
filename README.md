@@ -10,7 +10,9 @@ Step by step guid to building the api
 Step 1
 
 > Create a GitHub repo and clone on host os
-> cd repo
+```
+cd Python-Django-Bank-Application
+```
 > open with vscode
 > I created my virtual environment and activated with 
 
@@ -22,9 +24,11 @@ Step 2
 	3. database pass: Speed123_
 
 Step 3
-
->  pip install django 
->  pip is used to install python packages
+```
+  pip install django 
+  
+```
+pip is used to install python packages
 
 Step 4
 
