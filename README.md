@@ -22,11 +22,18 @@ git clone [Projectname]
 navigate to the project directory like so. 
 
 ```
-cd Python-Django-Bank-Application
+cd [Projectname]
 ```
 > open with vscode
+
+```
+code .
+```
 > I created my virtual environment and activated with 
 
+```
+python3 -m venv [virtualenvname]
+```
 Step 2
 
 > Create a postgresql database
