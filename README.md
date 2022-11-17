@@ -51,7 +51,7 @@ django-admin startproject [djangoproject .]
 python manage.py startapp [myapp name]
 ```
 python manage.py startapp [appname]
-
+```
 include myapp name in install apps in settings
 
 
