@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Speadpay',
+     'rest_framework',
+    'drf_yasg',
+    'core',
+    'rest_framework.authtoken',
+    
 ]
 
 MIDDLEWARE = [
@@ -50,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Speadpay.urls'
+ROOT_URLCONF = 'Speedpay.urls'
 
 TEMPLATES = [
     {
@@ -126,3 +130,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    # "DEFAULT_PAGINATION_CLASS": "core.pagination.MetadataPagination",
+    # "PAGE_SIZE": 100,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'rest_framework.authentication.SessionAuthentication',
+    'rest_framework.authentication.TokenAuthentication',
+),
+    'DEFAULT_PERMISSION_CLASSES': (
+    'rest_framework.permissions.IsAuthenticated',
+)
+}
