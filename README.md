@@ -12,7 +12,15 @@ Step by step guid to building the api
 
 Step 1
 
-> Create a GitHub repo and clone on host os
+> Create a GitHub [Projectname] and clone on host 
+
+To clone the github repo navigate to a directory on your pc 
+```
+git clone [Projectname]
+
+```
+navigate to the project directory like so. 
+
 ```
 cd Python-Django-Bank-Application
 ```
