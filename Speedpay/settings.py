@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
      'rest_framework',
     'drf_yasg',
-    'core',
     'rest_framework.authtoken',
+    'core',
+    
     
 ]
 
@@ -72,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Speadpay.wsgi.application'
+WSGI_APPLICATION = 'Speedpay.wsgi.application'
 
 
 # Database
@@ -131,14 +132,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+
 REST_FRAMEWORK = {
-    # "DEFAULT_PAGINATION_CLASS": "core.pagination.MetadataPagination",
-    # "PAGE_SIZE": 100,
     'DEFAULT_AUTHENTICATION_CLASSES': (
-    'rest_framework.authentication.SessionAuthentication',
-    'rest_framework.authentication.TokenAuthentication',
-),
-    'DEFAULT_PERMISSION_CLASSES': (
-    'rest_framework.permissions.IsAuthenticated',
-)
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'PAGE_SIZE': 10
 }

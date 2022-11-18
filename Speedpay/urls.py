@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(('Speedpay.api_urls', 'api'), namespace='api'))
+    path('api/', include(("Speedpay.api_urls", "api"), namespace="api")),
 ]

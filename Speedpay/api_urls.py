@@ -8,7 +8,7 @@ from django.urls import path, include
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Quick Transfer",
+      title="Speedpay Test",
       default_version='v1',
       description="Testing",
       terms_of_service="https://www.google.com/policies/terms/",
@@ -22,7 +22,6 @@ schema_view = get_schema_view(
 urlpatterns = [
    path("docs/", schema_view.with_ui("swagger", cache_timeout=0), name="docs-ui"),
    path("v1/", include(("core.urls", "core"))),
-#    path('v1/', include(('wallet.urls', 'wallet')))
-   #  path("v1/", include(("monitoring.urls", "monitoring"))),
+
    
 ]
