@@ -1,0 +1,1 @@
+web: gunicorn Speedpay.wsgi --log-file -
