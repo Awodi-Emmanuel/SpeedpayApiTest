@@ -74,7 +74,7 @@ python manage.py startapp [appname]
 include your appname in install apps in settings
 
 
-Step 8
+Step 9
 
 run pip requirements.txt to be able to  work with 
 the project. 
@@ -84,7 +84,7 @@ pip freeze > requirements.txt
 
 ```
 
-Step 9
+Step 10
 
 Make your migrations by running 
 
