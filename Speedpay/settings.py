@@ -95,8 +95,8 @@ DATABASES = {
         "PORT": "",
     }
 }
-PGUSER=speedpay PGPASSWORD=Speed123_ heroku pg:push postgres://localhost/speedpayapi  postgresql-convex-12345
-
+# PGUSER=speedpay PGPASSWORD=Speed123_ heroku pg:push postgres://localhost/speedpayapi  postgresql-convex-12345
+# push local database:PGUSER=speedpay PGPASSWORD=Speed123_  heroku pg:push postgres://localhost/speedpayapi postgresql-convex-12345
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
