@@ -6,8 +6,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth import authenticate
+from .models import Wallet, WalletTransaction 
 
-from .mode_serializer import UserSerializer
+
+
+from .model_serializer import UserSerializer
+from .input_serializer import DepositSerializer
 
 class Login(APIView):
     permission_class = ()
@@ -34,3 +38,27 @@ class Register(APIView):
 
         else:
             return Response({'error': "Invalid Credential"})
+
+class WalletInfo(APIView):
+
+    def get(self, request):
+        wallet = Wallet.objects.get(user=request.user)
+        print(wallet)
+        data = WalletSerializer(wallet).data 
+        return Response(data)  
+
+
+    
+class Deposit(APIView):
+
+    def post(self, request, *args, **Kwargs):
+        rcv_ser = DepositSerializer(data=self.request.data)
+        if rcv_ser.is_valid():
+            print(serializer)
+
+            
+            return True
+        else:
+            return Response({"request": "Invalid payload!"})
+                    
+

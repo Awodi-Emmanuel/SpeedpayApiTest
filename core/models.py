@@ -5,8 +5,11 @@ from django.utils import timezone
 # creat model here
 class Wallet(models.Model):
     user: models.OneToOneField = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    currency: models.CharField = models.CharField(max_length=50, null=True)
-    created_at: models.CharField = models.DateField(default=timezone.now, null=True)
+    amount: models.DecimalField = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    acount_no: models.CharField = models.CharField(max_length=100, null=True)
+    current_bal: models.DecimalField = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+
+    created_at:  models.DateField = models.DateField(default=timezone.now, null=True)
 
     # class Meta:
     #     abstract = True
@@ -17,17 +20,12 @@ class Wallet(models.Model):
     
 
 class WalletTransaction(models.Model):
-    TRANSACTION_TYPES = (
-        ('deposit', 'deposit'),
-        ('transfer', 'transfer'),
-        ('withdraw', 'withdraw'),
-    )
-
     wallet: models.ForeignKey = models.ForeignKey(Wallet, null=True, on_delete=models.CASCADE)
-    transaction_type: models.CharField(
-        max_length=200, null=True,  choices=TRANSACTION_TYPES)
-    amount: models.DecimalField(max_digits=100, default="pending")
-    paysack_payment_reference: models.CharField = models.CharField(max_length=100, default='', blank=True)
+    description: models.TextField = models.TextField(blank=True, null=True)
+    amount: models.DecimalField = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    destination_no: models.CharField = models.CharField(max_length=100, null=True)
+    status: models.CharField = models.CharField(max_length=100, null=True)
+    created_at: models.DateTimeField = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         # abstract = True
