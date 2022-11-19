@@ -3,6 +3,15 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 # creat model here
+
+class Account(models.Model):
+    user: models.OneToOneField = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    amount: models.CharField = models.CharField(max_length=10, null=True, blank=True)
+    current_bal: models.DecimalField = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    previous_bal: models.DecimalField = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    created_at:  models.DateField = models.DateField(default=timezone.now, null=True)
+
+
 class Wallet(models.Model):
     user: models.OneToOneField = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     amount: models.DecimalField = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
