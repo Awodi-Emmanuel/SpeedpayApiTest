@@ -57,14 +57,10 @@ include myapp name in install apps in settings
 
 Step 5 
 
-connect my database to postgresql
-install a package call psycopg2 to be able 
-to connect to postgres databse
-```
-pip install psycopg2
+run pip requirements.txt to be able to  work with 
+the project. 
 
 ```
-Step 6
+pip freeze > requirements.txt 
 
-> create model
-> User models
+```
