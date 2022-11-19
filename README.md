@@ -44,9 +44,7 @@ virtualenv env
 Step 5
 
 Create a postgresql database on your terminal different from your vscode
-	1. database name: speedpayapi
-	2. database user: speedpay
-	3. database pass: Speed123_
+	
 
 Step 6
 
