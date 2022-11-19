@@ -12,50 +12,63 @@ Step by step guid to building the api
 
 Step 1
 
-Create a GitHub [Projectname] and clone on host 
+Create a GitHub [Projectname] and clone it to your host os
 
 To clone the github repo navigate to a directory on your pc 
 ```
 git clone [Projectname]
 
 ```
+Step 2
 navigate to the project directory like so. 
 
 ```
 cd Python-Django-Bank-Application
 ```
-open with vscode
-I created my virtual environment and activated with 
+Step 3
+open project with vscode by typing
+```
+code .
+```
+Step 4
+create a virtual environment if you already have it setup with python  on 
+your computer.
 
-Step 2
+``` 
+virtualenv env
+```
 
-Create a postgresql database
+Step 4
+
+Create a postgresql database on your terminal different from your vscode
 	1. database name: speedpayapi
 	2. database user: speedpay
 	3. database pass: Speed123_
 
-Step 3
+Step 5
+Inside your project open in vscode run ro install django after activating your virtualenv 
 ```
   pip install django 
   
 ```
 pip is used to install python packages
 
-Step 4
+Step 6
 
-django-admin startapp [myproject name]
+start a new django project by running this django-admin startapp [myproject name]
 ```
 django-admin startproject [djangoproject .]
 ```
+Step 7
 
-python manage.py startapp [myapp name]
+To start your project run python manage.py startapp [myapp name]
 ```
 python manage.py startapp [appname]
 ```
-include myapp name in install apps in settings
+include your appname in install apps in settings
 
 
-Step 5 
+Step 8
 
 run pip requirements.txt to be able to  work with 
 the project. 
@@ -64,3 +77,16 @@ the project.
 pip freeze > requirements.txt 
 
 ```
+
+Step 9
+
+Make your migrations by running 
+
+```
+python manage.py makemigrations
+```
+And also
+```
+python manage.py migrate 
+```
+Your App is ready for use!
